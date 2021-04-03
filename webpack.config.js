@@ -18,6 +18,12 @@ module.exports = {
   devServer: {
     contentBase: path.resolve(__dirname, 'public'),
     hot: true,
+    watchOptions: {
+      ignored: [
+        path.resolve(__dirname, 'dist'),
+        path.resolve(__dirname, 'node_modules')
+      ]
+    }
   },
   plugins: [
     isDevelopment && new ReactRefreshWebpackPlugin(),  
